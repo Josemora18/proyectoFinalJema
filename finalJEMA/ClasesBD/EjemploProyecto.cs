@@ -8,6 +8,7 @@ namespace finalJEMA.ClasesBD
 {
    public  class EjemploProyecto
     {
+
        public int id { get; set; }
        public string nombre { get; set; }
     }

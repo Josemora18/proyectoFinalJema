@@ -62,6 +62,11 @@
     </ApplicationDefinition>
     <Compile Include="Asistente.cs" />
     <Compile Include="cuentaProveedor.cs" />
+    <Compile Include="Factura.cs" />
+    <Compile Include="Migrations\201511181959171_tablas.cs" />
+    <Compile Include="Migrations\201511181959171_tablas.Designer.cs">
+      <DependentUpon>201511181959171_tablas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Proveedor.cs" />
     <Compile Include="Servicio.cs" />
     <Page Include="MainWindow.xaml">
@@ -107,6 +112,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201511131648399_EjemploProyecto.resx">
       <DependentUpon>201511131648399_EjemploProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511181959171_tablas.resx">
+      <DependentUpon>201511181959171_tablas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

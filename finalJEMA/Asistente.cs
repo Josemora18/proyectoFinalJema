@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.ComponentModel.DataAnnotations;
 namespace finalJEMA
 {
-    class Asistente
+    public class Asistente
     {
-        public int IdAsistente { get; set; }
+     [Key]   public int IdAsistente { get; set; }
         public string nomAsistente { get; set; }
         public string  apeAsistente { get; set; }
         public string  telAsistente { get; set; }
+
+        public virtual ICollection<Factura> Facturas { get; set; }
     }
 }

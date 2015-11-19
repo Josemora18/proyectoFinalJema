@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+
 namespace finalJEMA
 {
    public  class Servicio
@@ -14,5 +15,10 @@ namespace finalJEMA
 
         public virtual int ProveedorIdProveedor { get; set; }
         public virtual ICollection<Factura> Facturas { get; set; }
+
+        internal void show()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

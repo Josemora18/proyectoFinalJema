@@ -15,5 +15,10 @@ namespace finalJEMA
 
          public virtual ICollection<Servicio > Servicios { get; set; }
          public virtual ICollection<Factura> Facturas { get; set; }
+
+         internal void Show()
+         {
+             throw new NotImplementedException();
+         }
     }
 }

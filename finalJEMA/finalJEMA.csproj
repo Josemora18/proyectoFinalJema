@@ -60,15 +60,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Asistente.cs" />
-    <Compile Include="cuentaProveedor.cs" />
-    <Compile Include="Factura.cs" />
+    <Compile Include="ClasesBD\Asistente.cs" />
+    <Compile Include="ClasesBD\cuentaProveedor.cs" />
+    <Compile Include="ClasesBD\Factura.cs" />
     <Compile Include="Migrations\201511181959171_tablas.cs" />
     <Compile Include="Migrations\201511181959171_tablas.Designer.cs">
       <DependentUpon>201511181959171_tablas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Proveedor.cs" />
-    <Compile Include="Servicio.cs" />
+    <Compile Include="ClasesBD\Proveedor.cs" />
+    <Compile Include="ClasesBD\Servicio.cs" />
+    <Compile Include="Ventanas\provEliminar.xaml.cs">
+      <DependentUpon>provEliminar.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,6 +87,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="nuevaVentana.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\provEliminar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

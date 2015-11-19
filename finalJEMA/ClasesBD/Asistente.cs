@@ -14,5 +14,10 @@ namespace finalJEMA
         public string  telAsistente { get; set; }
 
         public virtual ICollection<Factura> Facturas { get; set; }
+
+        internal void show()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

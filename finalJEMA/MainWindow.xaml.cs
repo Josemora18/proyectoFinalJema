@@ -30,5 +30,20 @@ namespace finalJEMA
             nuevaVentana vta = new nuevaVentana();
             vta.Show();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+           
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+           
+        }
     }
 }

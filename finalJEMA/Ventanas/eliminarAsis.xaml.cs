@@ -17,11 +17,11 @@ using System.Windows.Shapes;
 namespace finalJEMA.Ventanas
 {
     /// <summary>
-    /// Interaction logic for provEliminar.xaml
+    /// Interaction logic for eliminarAsis.xaml
     /// </summary>
-    public partial class provEliminar : Window
+    public partial class eliminarAsis : Window
     {
-        public provEliminar()
+        public eliminarAsis()
         {
             InitializeComponent();
         }
@@ -29,16 +29,16 @@ namespace finalJEMA.Ventanas
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             //borrar
-            if (Regex.IsMatch(gf.Text, @"^\d+$"))
+            if (Regex.IsMatch(txID.Text, @"^\d+$"))
             {
                 JEMA db = new JEMA();
-                int id = int.Parse(gf.Text);
-                var prov = /*from x in*/ db.Proveedores .SingleOrDefault(x => x.IdProveedor == id);
+                int id = int.Parse(txID.Text);
+                var asis = /*from x in*/ db.Asistentes .SingleOrDefault(x => x.IdAsistente  == id);
                 /*  where x.id == id
                   select x;*/
-                if (prov  != null)
+                if (asis  != null)
                 {
-                    db.Proveedores .Remove(prov );
+                    db.Asistentes .Remove(asis );
                     db.SaveChanges();
 
                 }
@@ -47,34 +47,24 @@ namespace finalJEMA.Ventanas
             else { MessageBox.Show("Solo Numeros  #id"); }
         }
 
-        private void gf_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             //consultar por id
-            if (Regex.IsMatch(gf.Text, @"^\d+$"))
+            if (Regex.IsMatch(txID.Text, @"^\d+$"))
             {
                 JEMA db = new JEMA();
-                int id = int.Parse(gf.Text);
-                var registros = from s in db.Proveedores 
-                                where s.IdProveedor == id
+                int id = int.Parse(txID.Text);
+                var registros = from s in db.Asistentes 
+                                where s.IdAsistente  == id
                                 select new
                                 {
-                                    s.NombreProveedor,
-                                    s.Direccion,
-                                    s.Giro 
+                                    s.nomAsistente ,
+                                    s.apeAsistente ,
+                                    s.telAsistente 
                                 };
-                d.ItemsSource = registros.ToList();
+                dbgrid.ItemsSource = registros.ToList();
             }
             else { MessageBox.Show("Solo Numeros  #id"); }
-        }
-
-        private void DbGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -82,16 +72,5 @@ namespace finalJEMA.Ventanas
             MainWindow vta = new MainWindow();
             vta.Show();
         }
-
-        private void Button_Click_4(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        
-
-        
-
-       
     }
 }

@@ -1,0 +1,24 @@
+﻿<Window x:Class="finalJEMA.nuevaVentana"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="nuevaVentana" Height="300" Width="556.716">
+    <Grid Margin="0,0,-8,-4">
+        <Button HorizontalAlignment="Left" Margin="217,216,0,0" VerticalAlignment="Top" Width="144">
+            <Button Content="Eliminar/Actualizar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="112" Click="Button_Click_2" RenderTransformOrigin="1.862,0.511" Height="25"/>
+        </Button>
+        <Button Content="Regresar" HorizontalAlignment="Right" Margin="0,0,388,29" Width="105" Click="Button_Click_3" Height="28" VerticalAlignment="Bottom"/>
+        <Button HorizontalAlignment="Left" Margin="393,216,0,0" VerticalAlignment="Top" Width="75">
+            <Button Content="Guardar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Height="26"/>
+        </Button>
+        <TextBox x:Name="txNombre" HorizontalAlignment="Left" Height="23" Margin="140,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" TextChanged="txNombre_TextChanged"/>
+        <TextBox x:Name="txDireccion" HorizontalAlignment="Left" Height="23" Margin="140,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221"/>
+        <TextBox x:Name="txGiro" HorizontalAlignment="Left" Height="23" Margin="135,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Margin="64,68,0,0" VerticalAlignment="Top"/>
+        <Label Content="Direccion" HorizontalAlignment="Left" Margin="58,118,0,0" VerticalAlignment="Top"/>
+        <Label Content="Giro" HorizontalAlignment="Left" Margin="86,168,0,0" VerticalAlignment="Top"/>
+        <Label Content="ID" HorizontalAlignment="Left" Margin="86,25,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txID" HorizontalAlignment="Left" Height="23" Margin="140,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
+        <Button Content="Acualizar" HorizontalAlignment="Left" Margin="286,25,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_4" Height="26"/>
+
+    </Grid>
+</Window>

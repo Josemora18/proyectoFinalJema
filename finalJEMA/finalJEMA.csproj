@@ -69,8 +69,30 @@
     </Compile>
     <Compile Include="ClasesBD\Proveedor.cs" />
     <Compile Include="ClasesBD\Servicio.cs" />
+    <Compile Include="Migrations\201511192013291_quitarForanea.cs" />
+    <Compile Include="Migrations\201511192013291_quitarForanea.Designer.cs">
+      <DependentUpon>201511192013291_quitarForanea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\eliminarAsis.xaml.cs">
+      <DependentUpon>eliminarAsis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\eliminarcuenPro.xaml.cs">
+      <DependentUpon>eliminarcuenPro.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\provEliminar.xaml.cs">
       <DependentUpon>provEliminar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\serEliminar.xaml.cs">
+      <DependentUpon>serEliminar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\vtaAsistente.xaml.cs">
+      <DependentUpon>vtaAsistente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\vtaCuentaProveedor.xaml.cs">
+      <DependentUpon>vtaCuentaProveedor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\vtaServicio.xaml.cs">
+      <DependentUpon>vtaServicio.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -86,11 +108,35 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="nuevaVentana.xaml">
+    <Page Include="Ventanas\eliminarAsis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\eliminarcuenPro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\nuevaVentana.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Ventanas\provEliminar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\serEliminar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\vtaAsistente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\vtaCuentaProveedor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Ventanas\vtaServicio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -101,7 +147,7 @@
       <DependentUpon>201511131648399_EjemploProyecto.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="nuevaVentana.xaml.cs">
+    <Compile Include="Ventanas\nuevaVentana.xaml.cs">
       <DependentUpon>nuevaVentana.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -123,11 +169,16 @@
     <EmbeddedResource Include="Migrations\201511181959171_tablas.resx">
       <DependentUpon>201511181959171_tablas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511192013291_quitarForanea.resx">
+      <DependentUpon>201511192013291_quitarForanea.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -138,6 +189,9 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="12278128_967494253308508_1160627159_n.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

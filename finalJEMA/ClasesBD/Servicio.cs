@@ -13,7 +13,7 @@ namespace finalJEMA
         public string nomServicio {get; set;}
         public float precio {get; set;}
 
-        public virtual int ProveedorIdProveedor { get; set; }
+        //public virtual int ProveedorIdProveedor { get; set; }
         public virtual ICollection<Factura> Facturas { get; set; }
 
         internal void show()

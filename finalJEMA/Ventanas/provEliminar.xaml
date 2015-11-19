@@ -3,11 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="provEliminar" Height="300" Width="579.104">
     <Grid Margin="0,0,2,0">
-        <Label Content="Ingrese ID" HorizontalAlignment="Left" Margin="166,89,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="gf" HorizontalAlignment="Left" Height="23" Margin="262,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="gf_TextChanged"/>
-        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="155,139,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <DataGrid x:Name="d" HorizontalAlignment="Left" Margin="132,195,0,0" VerticalAlignment="Top" Height="52" Width="302" SelectionChanged="DbGrid_SelectionChanged"/>
-        <Button Content="Consultar" HorizontalAlignment="Left" Margin="346,139,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Label Content="Ingrese ID" HorizontalAlignment="Left" Margin="202,42,0,0" VerticalAlignment="Top" Height="32"/>
+        <TextBox x:Name="gf" HorizontalAlignment="Left" Height="29" Margin="291,42,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="gf_TextChanged"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="191,109,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Height="26"/>
+        <DataGrid x:Name="d" HorizontalAlignment="Left" Margin="180,164,0,0" VerticalAlignment="Top" Height="83" Width="336" SelectionChanged="DbGrid_SelectionChanged"/>
+        <Button Content="Consultar" HorizontalAlignment="Left" Margin="412,109,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click_2" Height="26"/>
+        <Button Content="Regresar" HorizontalAlignment="Left" Margin="40,198,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click_3" Height="26"/>
 
     </Grid>
 </Window>

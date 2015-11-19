@@ -56,5 +56,32 @@ namespace finalJEMA
         {
 
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            MainWindow vta = new MainWindow();
+            vta.Show();
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            //Actualizar
+            if (Regex.IsMatch(txNombre.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txDireccion.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txGiro.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txID.Text, @"^\d+$"))
+            {
+                JEMA db = new JEMA();
+                int id = int.Parse(txID.Text);
+                var prov = /*from x in*/ db.Proveedores .SingleOrDefault(x => x.IdProveedor  == id);
+                /*  where x.id == id
+                  select x;*/
+                if (prov  != null)
+                {
+                    prov.NombreProveedor  = txNombre.Text;
+                    prov.Direccion  = txDireccion.Text;
+                    prov.Giro = txGiro.Text;
+                    db.SaveChanges();
+                }
+            }
+            else { MessageBox.Show("Solo Letras y numeros donde corresponde"); }
+        }
     }
 }

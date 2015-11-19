@@ -1,4 +1,5 @@
-﻿using System;
+﻿using finalJEMA.Ventanas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,17 +34,20 @@ namespace finalJEMA
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-           
+            vtaServicio vta = new vtaServicio();
+            vta.Show();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            
+            vtaCuentaProveedor vta = new vtaCuentaProveedor();
+            vta.Show();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-           
+            vtaAsistente vta = new vtaAsistente();
+            vta.Show();
         }
     }
 }

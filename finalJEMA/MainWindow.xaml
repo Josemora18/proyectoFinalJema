@@ -10,7 +10,7 @@
         <Label HorizontalAlignment="Left" Margin="126,42,0,0" VerticalAlignment="Top" Height="140" Width="275">
             <Image Height="130" Source="12278128_967494253308508_1160627159_n.jpg" Stretch="Fill" Width="265"/>
         </Label>
-        <Label Content="HelpMeApp" HorizontalAlignment="Left" Margin="200,10,0,0" VerticalAlignment="Top" Width="148" FontSize="22" FontFamily="Showcard Gothic"/>
+        <Label Content="HelpMeApp" HorizontalAlignment="Left" Margin="343,10,0,0" VerticalAlignment="Top" Width="148" FontSize="22" FontFamily="Showcard Gothic"/>
 
     </Grid>
 </Window>

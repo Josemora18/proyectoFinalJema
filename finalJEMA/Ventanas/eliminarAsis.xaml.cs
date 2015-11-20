@@ -45,32 +45,38 @@ namespace finalJEMA.Ventanas
 
             }
             else { MessageBox.Show("Solo Numeros  #id"); }
+            MessageBox.Show("Se borraron los datos exitosamente");
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //consultar por id
-            if (Regex.IsMatch(txID.Text, @"^\d+$"))
-            {
-                JEMA db = new JEMA();
-                int id = int.Parse(txID.Text);
-                var registros = from s in db.Asistentes 
-                                where s.IdAsistente  == id
-                                select new
-                                {
-                                    s.nomAsistente ,
-                                    s.apeAsistente ,
-                                    s.telAsistente 
-                                };
-                dbgrid.ItemsSource = registros.ToList();
-            }
-            else { MessageBox.Show("Solo Numeros  #id"); }
+            JEMA db = new JEMA();
+            var registros = from s in db.Asistentes 
+                            select s;
+            dbgrid.ItemsSource = registros.ToList();
+            ////consultar por id
+            //if (Regex.IsMatch(txID.Text, @"^\d+$"))
+            //{
+            //    JEMA db = new JEMA();
+            //    int id = int.Parse(txID.Text);
+            //    var registros = from s in db.Asistentes 
+            //                    where s.IdAsistente  == id
+            //                    select new
+            //                    {
+            //                        s.nomAsistente ,
+            //                        s.apeAsistente ,
+            //                        s.telAsistente 
+            //                    };
+            //    dbgrid.ItemsSource = registros.ToList();
+            //}
+            //else { MessageBox.Show("Solo Numeros  #id"); }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            MainWindow vta = new MainWindow();
-            vta.Show();
+            //MainWindow vta = new MainWindow();
+            //vta.Show();
+            this.Close();
         }
     }
 }

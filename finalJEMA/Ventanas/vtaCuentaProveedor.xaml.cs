@@ -28,8 +28,9 @@ namespace finalJEMA.Ventanas
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            MainWindow vta = new MainWindow();
-            vta.Show();
+            //MainWindow vta = new MainWindow();
+            //vta.Show();
+            this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -46,8 +47,18 @@ namespace finalJEMA.Ventanas
 
                 db.cuentaProveedores .Add(cuePro );
                 db.SaveChanges();
+                actualizaCombo();
             }
             else { MessageBox.Show("Solo inserte letras "); }
+            MessageBox.Show("Se guardaron los datos exitosamente");
+        }
+        public void actualizaCombo()
+        {
+            // para que muestre los dptos en el combobox
+            JEMA db = new JEMA();
+            cbbID.ItemsSource = db.Proveedores.ToList();
+            cbbID.DisplayMemberPath = "IdCuenta";
+            cbbID.SelectedValuePath = "IdCuenta";
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -59,10 +70,10 @@ namespace finalJEMA.Ventanas
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             //Actualizar
-            if (Regex.IsMatch(txUsuario.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txContra.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txID.Text, @"^\d+$"))
+            if (Regex.IsMatch(txUsuario.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txContra.Text, @"^[a-zA-Z]+$"))
             {
                 JEMA db = new JEMA();
-                int id = int.Parse(txID.Text);
+                int id = int.Parse(cbbID.Text);
                 var cuePro = /*from x in*/ db.cuentaProveedores .SingleOrDefault(x => x.IdCuenta  == id);
                 /*  where x.id == id
                   select x;*/
@@ -74,6 +85,16 @@ namespace finalJEMA.Ventanas
                 }
             }
             else { MessageBox.Show("Solo Letras y numeros donde corresponde"); }
+            MessageBox.Show("Se actualizaron los datos exitosamente");
+        }
+
+        private void Window_Loaded_1(object sender, RoutedEventArgs e)
+        {
+            // para que muestre los dptos en el combobox
+            JEMA db = new JEMA();
+            cbbID.ItemsSource = db.cuentaProveedores .ToList();
+            cbbID.DisplayMemberPath = "IdCuenta";
+            cbbID.SelectedValuePath = "IdCuenta";
         }
     }
 }

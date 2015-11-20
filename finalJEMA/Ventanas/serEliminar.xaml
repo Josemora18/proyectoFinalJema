@@ -3,12 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="serEliminar" Height="300" Width="562.687">
     <Grid>
-        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="214,127,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
-        <Button Content="Consultar" HorizontalAlignment="Left" Margin="338,127,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
-        <Label Content="Ingrese ID" HorizontalAlignment="Left" Margin="130,52,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txID" HorizontalAlignment="Left" Height="23" Margin="244,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <DataGrid x:Name="dbgrid" HorizontalAlignment="Left" Margin="90,166,0,0" VerticalAlignment="Top" Height="77" Width="384"/>
-        <Button Content="Regresar" HorizontalAlignment="Left" Margin="90,127,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+        <Button Content="Eliminar" HorizontalAlignment="Left" Margin="172,111,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Consultar" HorizontalAlignment="Left" Margin="402,111,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <Label Content="Ingrese ID a Eliminar" HorizontalAlignment="Left" Margin="172,52,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txID" HorizontalAlignment="Left" Height="23" Margin="317,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <DataGrid x:Name="dbgrid" HorizontalAlignment="Left" Margin="130,166,0,0" VerticalAlignment="Top" Height="77" Width="384"/>
+        <Button Content="Regresar" HorizontalAlignment="Left" Margin="23,191,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
 
     </Grid>
 </Window>

@@ -29,22 +29,36 @@ namespace finalJEMA
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (Regex.IsMatch(txNombre.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txDireccion.Text, @"^[a-zA-Z]+$")&& Regex.IsMatch(txDireccion.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txNombre.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txDireccion.Text, @"^[a-zA-Z]+$"))
             {
                 //instanciar
                 JEMA db = new JEMA();
                 Proveedor  prov = new Proveedor ();
                 prov.NombreProveedor = txNombre.Text;
                 prov.Direccion = txDireccion.Text;
-                prov.Giro = txGiro.Text;
+                prov.Giro = cbbGiro.Text;
+
+                //prov .IdProveedor  = (int)cbbID.SelectedValue;
                 //emp.Sueldo = int.Parse(txSueldo.Text);
                 //emp.DepartamentoId = (int)CbDepartamentos.SelectedValue;
 
                 db.Proveedores .Add(prov );
                 db.SaveChanges();
+                actualizaCombo();
             }
             else { MessageBox.Show("Solo inserte letras "); }
+            MessageBox.Show("Se guardaron los datos exitosamente");
         }
+
+        public void actualizaCombo() {
+            // para que muestre los dptos en el combobox
+            JEMA db = new JEMA();
+            cbbID.ItemsSource = db.Proveedores.ToList();
+            cbbID.DisplayMemberPath = "IdProveedor";
+            cbbID.SelectedValuePath = "IdProveedor";
+        }
+
+
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
@@ -59,29 +73,56 @@ namespace finalJEMA
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            MainWindow vta = new MainWindow();
-            vta.Show();
+            //MainWindow vta = new MainWindow();
+            //vta.Show();
+            this.Close();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             //Actualizar
-            if (Regex.IsMatch(txNombre.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txDireccion.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txGiro.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txID.Text, @"^\d+$"))
+            if (Regex.IsMatch(txNombre.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txDireccion.Text, @"^[a-zA-Z]+$"))
             {
                 JEMA db = new JEMA();
-                int id = int.Parse(txID.Text);
-                var prov = /*from x in*/ db.Proveedores .SingleOrDefault(x => x.IdProveedor  == id);
+                int id = int.Parse(cbbID.Text);
+                var prov = /*from x in*/ db.Proveedores .SingleOrDefault(x => x.IdProveedor   == id);
                 /*  where x.id == id
                   select x;*/
                 if (prov  != null)
                 {
                     prov.NombreProveedor  = txNombre.Text;
                     prov.Direccion  = txDireccion.Text;
-                    prov.Giro = txGiro.Text;
+                    prov.Giro = cbbGiro.Text;
                     db.SaveChanges();
+                    MessageBox.Show("Se actualizaron los datos exitosamente");
                 }
             }
             else { MessageBox.Show("Solo Letras y numeros donde corresponde"); }
+           
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void txGiro_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txID_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Grid_Loaded_1(object sender, RoutedEventArgs e)
+        {
+            // para que muestre los dptos en el combobox
+            JEMA  db = new JEMA ();
+            cbbID.ItemsSource = db.Proveedores .ToList();
+            cbbID.DisplayMemberPath = "IdProveedor";
+            cbbID.SelectedValuePath = "IdProveedor";
         }
     }
 }

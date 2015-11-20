@@ -45,32 +45,38 @@ namespace finalJEMA.Ventanas
 
             }
             else { MessageBox.Show("Solo Numeros  #id"); }
+            MessageBox.Show("Se borraron los datos exitosamente");
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            MainWindow vta = new MainWindow();
-            vta.Show();
+            //MainWindow vta = new MainWindow();
+            //vta.Show();
+            this.Close();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //consultar por id
-            if (Regex.IsMatch(txID.Text, @"^\d+$"))
-            {
-                JEMA db = new JEMA();
-                int id = int.Parse(txID.Text);
-                var registros = from s in db.cuentaProveedores 
-                                where s.IdCuenta  == id
-                                select new
-                                {
-                                    s.usuario ,
-                                    s.contraseña 
+            JEMA db = new JEMA();
+            var registros = from s in db.cuentaProveedores 
+                            select s;
+            dbgrid.ItemsSource = registros.ToList();
+            ////consultar por id
+            //if (Regex.IsMatch(txID.Text, @"^\d+$"))
+            //{
+            //    JEMA db = new JEMA();
+            //    int id = int.Parse(txID.Text);
+            //    var registros = from s in db.cuentaProveedores 
+            //                    where s.IdCuenta  == id
+            //                    select new
+            //                    {
+            //                        s.usuario ,
+            //                        s.contraseña 
                                     
-                                };
-                dbgrid.ItemsSource = registros.ToList();
-            }
-            else { MessageBox.Show("Solo Numeros  #id"); }
+            //                    };
+            //    dbgrid.ItemsSource = registros.ToList();
+            //}
+            //else { MessageBox.Show("Solo Numeros  #id"); }
         }
     }
 }

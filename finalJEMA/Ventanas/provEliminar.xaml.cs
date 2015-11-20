@@ -45,6 +45,7 @@ namespace finalJEMA.Ventanas
 
             }
             else { MessageBox.Show("Solo Numeros  #id"); }
+           MessageBox.Show("Se borraron los datos exitosamente");
         }
 
         private void gf_TextChanged(object sender, TextChangedEventArgs e)
@@ -54,22 +55,33 @@ namespace finalJEMA.Ventanas
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //consultar por id
-            if (Regex.IsMatch(gf.Text, @"^\d+$"))
-            {
-                JEMA db = new JEMA();
-                int id = int.Parse(gf.Text);
+            //consultar Todo
+            //if (Regex.IsMatch(gf.Text, @"^\d+$"))
+            //{
+                JEMA  db = new JEMA ();
                 var registros = from s in db.Proveedores 
-                                where s.IdProveedor == id
-                                select new
-                                {
-                                    s.NombreProveedor,
-                                    s.Direccion,
-                                    s.Giro 
-                                };
+                                select s;
                 d.ItemsSource = registros.ToList();
-            }
-            else { MessageBox.Show("Solo Numeros  #id"); }
+
+            //}
+            //else { MessageBox.Show("Solo Numeros  #id"); }
+        
+            //consultar por id
+            //if (Regex.IsMatch(gf.Text, @"^\d+$"))
+            //{
+            //    JEMA db = new JEMA();
+            //    int id = int.Parse(gf.Text);
+            //    var registros = from s in db.Proveedores 
+            //                    where s.IdProveedor == id
+            //                    select new
+            //                    {
+            //                        s.NombreProveedor,
+            //                        s.Direccion,
+            //                        s.Giro 
+            //                    };
+            //    d.ItemsSource = registros.ToList();
+            //}
+            //else { MessageBox.Show("Solo Numeros  #id"); }
         }
 
         private void DbGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -79,8 +91,9 @@ namespace finalJEMA.Ventanas
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            MainWindow vta = new MainWindow();
-            vta.Show();
+            //MainWindow vta = new MainWindow();
+            //vta.Show();
+            this.Close();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)

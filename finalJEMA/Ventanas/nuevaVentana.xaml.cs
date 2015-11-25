@@ -29,7 +29,7 @@ namespace finalJEMA
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (Regex.IsMatch(txNombre.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txDireccion.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txNombre.Text, @"^[a-zA-Z\s]+$") && Regex.IsMatch(txDireccion.Text, @"^[a-zA-Z\s]+$"))
             {
                 //instanciar
                 JEMA db = new JEMA();
@@ -45,9 +45,10 @@ namespace finalJEMA
                 db.Proveedores .Add(prov );
                 db.SaveChanges();
                 actualizaCombo();
+                MessageBox.Show("Se guardaron los datos exitosamente");
             }
-            else { MessageBox.Show("Solo inserte letras "); }
-            MessageBox.Show("Se guardaron los datos exitosamente");
+            else { MessageBox.Show("Solo inserte letras donde corresponde"); }
+           
         }
 
         public void actualizaCombo() {
@@ -81,7 +82,7 @@ namespace finalJEMA
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             //Actualizar
-            if (Regex.IsMatch(txNombre.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txDireccion.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txNombre.Text, @"^[a-zA-Z\s]+$") && Regex.IsMatch(txDireccion.Text, @"^[a-zA-Z\s]+$"))
             {
                 JEMA db = new JEMA();
                 int id = int.Parse(cbbID.Text);

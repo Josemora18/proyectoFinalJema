@@ -40,12 +40,12 @@ namespace finalJEMA.Ventanas
                 {
                     db.cuentaProveedores .Remove(cuenPro );
                     db.SaveChanges();
-
+                    MessageBox.Show("Se borraron los datos exitosamente");
                 }
 
             }
             else { MessageBox.Show("Solo Numeros  #id"); }
-            MessageBox.Show("Se borraron los datos exitosamente");
+           
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

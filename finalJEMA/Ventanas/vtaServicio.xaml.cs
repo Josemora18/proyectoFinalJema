@@ -46,12 +46,13 @@ namespace finalJEMA.Ventanas
                 //emp.Sueldo = int.Parse(txSueldo.Text);
                 //emp.DepartamentoId = (int)CbDepartamentos.SelectedValue;
 
-                db.Servicios .Add(ser  );
+                db.Servicios .Add(ser);
                 db.SaveChanges();
                 actualizaCombo();
+                MessageBox.Show("Se guardaron los datos exitosamente");
             }
-            else { MessageBox.Show("Solo inserte letras "); }
-            MessageBox.Show("Se guardaron los datos exitosamente");
+            else { MessageBox.Show("Solo inserte letras donde corresponde"); }
+            
         }
         public void actualizaCombo()
         {
@@ -71,7 +72,7 @@ namespace finalJEMA.Ventanas
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             //Actualizar
-            if (Regex.IsMatch(txServicio.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txPrecio.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txServicio.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txPrecio.Text, @"^\d+$"))
             {
                 JEMA db = new JEMA();
                 int id = int.Parse(cbbID.Text);

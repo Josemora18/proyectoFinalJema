@@ -48,9 +48,10 @@ namespace finalJEMA.Ventanas
                 db.cuentaProveedores .Add(cuePro );
                 db.SaveChanges();
                 actualizaCombo();
+                MessageBox.Show("Se guardaron los datos exitosamente");
             }
-            else { MessageBox.Show("Solo inserte letras "); }
-            MessageBox.Show("Se guardaron los datos exitosamente");
+            else { MessageBox.Show("Solo inserte letras donde corresponde y sin espacios"); }
+           
         }
         public void actualizaCombo()
         {
@@ -82,10 +83,11 @@ namespace finalJEMA.Ventanas
                     cuePro.usuario  = txUsuario.Text;
                     cuePro.contraseña  = txContra.Text;
                     db.SaveChanges();
+                    MessageBox.Show("Se actualizaron los datos exitosamente");
                 }
             }
             else { MessageBox.Show("Solo Letras y numeros donde corresponde"); }
-            MessageBox.Show("Se actualizaron los datos exitosamente");
+           
         }
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)

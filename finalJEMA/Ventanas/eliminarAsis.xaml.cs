@@ -40,12 +40,12 @@ namespace finalJEMA.Ventanas
                 {
                     db.Asistentes .Remove(asis );
                     db.SaveChanges();
-
+                    MessageBox.Show("Se borraron los datos exitosamente");
                 }
 
             }
-            else { MessageBox.Show("Solo Numeros  #id"); }
-            MessageBox.Show("Se borraron los datos exitosamente");
+            else { MessageBox.Show("Solo Numeros donde corresponde"); }
+            
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

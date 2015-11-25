@@ -35,7 +35,7 @@ namespace finalJEMA.Ventanas
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (Regex.IsMatch(txAsistente.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txapellido.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txtel.Text, @"^\d+$"))
+            if (Regex.IsMatch(txAsistente.Text, @"^[a-zA-Z\s]+$") && Regex.IsMatch(txapellido.Text, @"^[a-zA-Z\s]+$") && Regex.IsMatch(txtel.Text, @"^\d+$"))
             {
                 //instanciar
                 JEMA db = new JEMA();
@@ -49,9 +49,10 @@ namespace finalJEMA.Ventanas
                 db.Asistentes .Add(asis );
                 db.SaveChanges();
                 actualizaCombo();
+                MessageBox.Show("Se guardaron los datos exitosamente");
             }
-            else { MessageBox.Show("Solo inserte letras "); }
-            MessageBox.Show("Se guardaron los datos exitosamente");
+            else { MessageBox.Show("Solo inserte letras donde corresponde"); }
+           
         }
         public void actualizaCombo()
         {
@@ -71,7 +72,7 @@ namespace finalJEMA.Ventanas
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             //Actualizar
-            if (Regex.IsMatch(txAsistente.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txapellido.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txAsistente.Text, @"^[a-zA-Z\s]+$") && Regex.IsMatch(txapellido.Text, @"^[a-zA-Z\s]+$"))
             {
                 JEMA db = new JEMA();
                 int id = int.Parse(cbbID.Text);
@@ -84,10 +85,11 @@ namespace finalJEMA.Ventanas
                     asis.apeAsistente  = txapellido.Text;
                     asis.telAsistente  = txtel.Text;
                     db.SaveChanges();
+                    MessageBox.Show("Se actualizaron los datos exitosamente");
                 }
             }
             else { MessageBox.Show("Solo Letras y numeros donde corresponde"); }
-            MessageBox.Show("Se actualizaron los datos exitosamente");
+           
         }
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)

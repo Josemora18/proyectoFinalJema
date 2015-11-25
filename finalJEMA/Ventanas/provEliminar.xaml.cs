@@ -40,14 +40,22 @@ namespace finalJEMA.Ventanas
                 {
                     db.Proveedores .Remove(prov );
                     db.SaveChanges();
-
+                    MessageBox.Show("Se borraron los datos exitosamente");
+                    limpiar();
                 }
 
             }
             else { MessageBox.Show("Solo Numeros  #id"); }
-           MessageBox.Show("Se borraron los datos exitosamente");
+          
         }
 
+        private void limpiar()
+        {
+       
+            gf.Text = string.Empty;
+            
+        }
+        
         private void gf_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -94,6 +102,7 @@ namespace finalJEMA.Ventanas
             //MainWindow vta = new MainWindow();
             //vta.Show();
             this.Close();
+            limpiar();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)

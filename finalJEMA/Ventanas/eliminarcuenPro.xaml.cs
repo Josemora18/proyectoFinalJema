@@ -41,11 +41,17 @@ namespace finalJEMA.Ventanas
                     db.cuentaProveedores .Remove(cuenPro );
                     db.SaveChanges();
                     MessageBox.Show("Se borraron los datos exitosamente");
+                    limpiar();
                 }
 
             }
             else { MessageBox.Show("Solo Numeros  #id"); }
            
+        }
+        private void limpiar()
+        {
+            txID.Text = string.Empty;
+            
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
@@ -53,6 +59,7 @@ namespace finalJEMA.Ventanas
             //MainWindow vta = new MainWindow();
             //vta.Show();
             this.Close();
+            limpiar();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

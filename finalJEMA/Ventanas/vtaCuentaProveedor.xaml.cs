@@ -31,11 +31,12 @@ namespace finalJEMA.Ventanas
             //MainWindow vta = new MainWindow();
             //vta.Show();
             this.Close();
+            limpiar();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (Regex.IsMatch(txUsuario.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txContra.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txUsuario.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txContra.Text, @"^[a-zA-Z0-9]+$"))
             {
                 //instanciar
                 JEMA db = new JEMA();
@@ -49,9 +50,15 @@ namespace finalJEMA.Ventanas
                 db.SaveChanges();
                 actualizaCombo();
                 MessageBox.Show("Se guardaron los datos exitosamente");
+                limpiar();
             }
             else { MessageBox.Show("Solo inserte letras donde corresponde y sin espacios"); }
            
+        }
+        private void limpiar()
+        {
+            txUsuario.Text = string.Empty;
+            txContra.Text = string.Empty;
         }
         public void actualizaCombo()
         {
@@ -66,12 +73,13 @@ namespace finalJEMA.Ventanas
         {
             eliminarcuenPro vta = new eliminarcuenPro();
             vta.Show();
+            limpiar();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             //Actualizar
-            if (Regex.IsMatch(txUsuario.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txContra.Text, @"^[a-zA-Z]+$"))
+            if (Regex.IsMatch(txUsuario.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(txContra.Text, @"^[a-zA-Z0-9]+$"))
             {
                 JEMA db = new JEMA();
                 int id = int.Parse(cbbID.Text);
@@ -84,6 +92,7 @@ namespace finalJEMA.Ventanas
                     cuePro.contraseña  = txContra.Text;
                     db.SaveChanges();
                     MessageBox.Show("Se actualizaron los datos exitosamente");
+                    limpiar();
                 }
             }
             else { MessageBox.Show("Solo Letras y numeros donde corresponde"); }

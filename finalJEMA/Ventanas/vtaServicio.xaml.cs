@@ -31,6 +31,7 @@ namespace finalJEMA.Ventanas
             //MainWindow vta = new MainWindow();
             //vta.Show();
             this.Close();
+            limpiar();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -50,6 +51,7 @@ namespace finalJEMA.Ventanas
                 db.SaveChanges();
                 actualizaCombo();
                 MessageBox.Show("Se guardaron los datos exitosamente");
+                limpiar();
             }
             else { MessageBox.Show("Solo inserte letras donde corresponde"); }
             
@@ -62,11 +64,17 @@ namespace finalJEMA.Ventanas
             cbbID.DisplayMemberPath = "IdServicio";
             cbbID.SelectedValuePath = "IdServicio";
         }
+        private void limpiar()
+        {
+            txServicio.Text = string.Empty;
+            txPrecio.Text = string.Empty;
+        }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             serEliminar vta = new serEliminar();
             vta.Show();
+            limpiar();
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
@@ -85,6 +93,7 @@ namespace finalJEMA.Ventanas
                     ser.precio = float.Parse(txPrecio.Text);
                     db.SaveChanges();
                     MessageBox.Show("Se actualizaron los datos exitosamente");
+                    limpiar();
                 }
             }
             else { MessageBox.Show("Solo Letras y numeros donde corresponde"); }

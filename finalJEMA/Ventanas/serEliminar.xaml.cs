@@ -41,11 +41,17 @@ namespace finalJEMA.Ventanas
                     db.Servicios .Remove(ser );
                     db.SaveChanges();
                     MessageBox.Show("Se borraron los datos exitosamente");
+                    limpiar();
                 }
 
             }
             else { MessageBox.Show("Solo Numeros donde corresponde"); }
           
+        }
+        private void limpiar()
+        {
+            txID.Text = string.Empty;
+            
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -77,6 +83,7 @@ namespace finalJEMA.Ventanas
             //MainWindow vta = new MainWindow();
             //vta.Show();
             this.Close();
+            limpiar();
         }
     }
 }

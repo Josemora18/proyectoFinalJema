@@ -41,11 +41,24 @@ namespace finalJEMA.Ventanas
                     db.Asistentes .Remove(asis );
                     db.SaveChanges();
                     MessageBox.Show("Se borraron los datos exitosamente");
+                    limpiar();
+                    actualizaGrid();
                 }
-
             }
             else { MessageBox.Show("Solo Numeros donde corresponde"); }
-            
+        }
+
+        public void actualizaGrid()
+        {
+            // para que actualice el grid
+            JEMA db = new JEMA();
+            dbgrid.ItemsSource = db.Proveedores.ToList();
+            db.SaveChanges();
+        }
+
+        private void limpiar()
+        {
+            txID.Text = string.Empty;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)

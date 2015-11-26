@@ -42,10 +42,11 @@ namespace finalJEMA.Ventanas
                     db.SaveChanges();
                     MessageBox.Show("Se borraron los datos exitosamente");
                     limpiar();
+                    actualizaGrid();
                 }
 
             }
-            else { MessageBox.Show("Solo Numeros  #id"); }
+            else { MessageBox.Show("Solo Numeros donde corresponde"); }
           
         }
 
@@ -105,9 +106,12 @@ namespace finalJEMA.Ventanas
             limpiar();
         }
 
-        private void Button_Click_4(object sender, RoutedEventArgs e)
+        private void actualizaGrid()
         {
-
+            // para que muestre los dptos en el combobox
+            JEMA db = new JEMA();
+            d.ItemsSource = db.Proveedores.ToList();
+            db.SaveChanges();
         }
 
         

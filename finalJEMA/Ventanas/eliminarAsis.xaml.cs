@@ -52,7 +52,7 @@ namespace finalJEMA.Ventanas
         {
             // para que actualice el grid
             JEMA db = new JEMA();
-            dbgrid.ItemsSource = db.Proveedores.ToList();
+            dbgrid.ItemsSource = db.Asistentes .ToList();
             db.SaveChanges();
         }
 
@@ -90,6 +90,7 @@ namespace finalJEMA.Ventanas
             //MainWindow vta = new MainWindow();
             //vta.Show();
             this.Close();
+           
         }
     }
 }

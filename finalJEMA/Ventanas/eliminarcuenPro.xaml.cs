@@ -58,7 +58,7 @@ namespace finalJEMA.Ventanas
         {
             // para que actualice el grid
             JEMA db = new JEMA();
-            dbgrid.ItemsSource = db.Proveedores.ToList();
+            dbgrid.ItemsSource = db.cuentaProveedores .ToList();
             db.SaveChanges();
         }
 

@@ -64,7 +64,7 @@ namespace finalJEMA.Ventanas
         {
             // para que muestre los dptos en el combobox
             JEMA db = new JEMA();
-            cbbID.ItemsSource = db.Proveedores.ToList();
+            cbbID.ItemsSource = db.cuentaProveedores .ToList();
             cbbID.DisplayMemberPath = "IdCuenta";
             cbbID.SelectedValuePath = "IdCuenta";
         }

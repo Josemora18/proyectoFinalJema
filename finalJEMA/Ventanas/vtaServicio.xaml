@@ -6,13 +6,15 @@
         <Button Content="Eliminar" HorizontalAlignment="Left" Margin="198,179,0,0" VerticalAlignment="Top" Width="153" Click="Button_Click_3" Height="33"/>
         <Button Content="Regresar" HorizontalAlignment="Left" Margin="72,179,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click_1" Height="33"/>
         <Button Content="Guardar" HorizontalAlignment="Left" Margin="392,179,0,0" VerticalAlignment="Top" Width="79" Click="Button_Click_2" Height="33"/>
-        <TextBox x:Name="txServicio" HorizontalAlignment="Left" Height="23" Margin="198,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txPrecio" HorizontalAlignment="Left" Height="23" Margin="198,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Servicio" HorizontalAlignment="Left" Margin="117,69,0,0" VerticalAlignment="Top"/>
-        <Label Content="Precio" HorizontalAlignment="Left" Margin="125,116,0,0" VerticalAlignment="Top"/>
-        <Label Content="ID" HorizontalAlignment="Left" Margin="139,27,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txServicio" HorizontalAlignment="Left" Height="23" Margin="198,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txPrecio" HorizontalAlignment="Left" Height="23" Margin="198,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Servicio" HorizontalAlignment="Left" Margin="117,47,0,0" VerticalAlignment="Top"/>
+        <Label Content="Precio" HorizontalAlignment="Left" Margin="125,94,0,0" VerticalAlignment="Top"/>
+        <Label Content="ID de servicio" HorizontalAlignment="Left" Margin="87,6,0,0" VerticalAlignment="Top"/>
         <Button Content="Actualizar" HorizontalAlignment="Left" Margin="378,27,0,0" VerticalAlignment="Top" Width="93" Height="26" Click="Button_Click_4"/>
-        <ComboBox x:Name="cbbID" HorizontalAlignment="Left" Margin="198,27,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cbbID" HorizontalAlignment="Left" Margin="198,10,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Proveedor de servicio" HorizontalAlignment="Left" Margin="44,135,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbbIDPro" HorizontalAlignment="Left" Margin="198,139,0,0" VerticalAlignment="Top" Width="120" Loaded="ComboBox_Loaded_1"/>
 
     </Grid>
 </Window>

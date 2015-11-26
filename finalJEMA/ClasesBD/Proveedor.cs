@@ -13,8 +13,9 @@ namespace finalJEMA
          public string Direccion {get; set; }
          public string Giro {get; set; }
 
-         //public virtual ICollection<Servicio > Servicios { get; set; }
          public virtual ICollection<Factura> Facturas { get; set; }
+         //public virtual ICollection<Servicio> Servicios { get; set; }
+         
 
          internal void Show()
          {

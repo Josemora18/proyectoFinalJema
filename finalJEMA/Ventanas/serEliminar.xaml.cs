@@ -43,6 +43,7 @@ namespace finalJEMA.Ventanas
                     MessageBox.Show("Se borraron los datos exitosamente");
                     limpiar();
                     actualizaGrid();
+                   
                 }
 
             }
@@ -58,7 +59,7 @@ namespace finalJEMA.Ventanas
         {
             // para que muestre los dptos en el combobox
             JEMA db = new JEMA();
-            dbgrid.ItemsSource = db.Proveedores.ToList();
+            dbgrid.ItemsSource = db.Servicios .ToList();
             db.SaveChanges();
         }
 

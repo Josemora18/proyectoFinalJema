@@ -43,7 +43,7 @@ namespace finalJEMA.Ventanas
                 Servicio   ser = new Servicio  ();
                 ser.nomServicio = txServicio.Text;
                 ser.precio = float.Parse(txPrecio.Text);
-               
+               // ser.ProveedorIdProveedor = int.Parse(comboprove.SelectedValue.ToString());
                 //emp.Sueldo = int.Parse(txSueldo.Text);
                 //emp.DepartamentoId = (int)CbDepartamentos.SelectedValue;
 
@@ -108,6 +108,15 @@ namespace finalJEMA.Ventanas
             cbbID.DisplayMemberPath = "IdServicio";
             cbbID.SelectedValuePath = "IdServicio";
 
+        }
+
+        private void ComboBox_Loaded_1(object sender, RoutedEventArgs e)
+        {
+            // para que muestre los proveedores de la bd en el cbb
+            JEMA db = new JEMA();
+            cbbIDPro.ItemsSource = db.Proveedores.ToList();
+            cbbIDPro.DisplayMemberPath = "NombreProveedor";
+            cbbIDPro.SelectedValuePath = "IdProveedor";
         }
     }
 }

@@ -13,7 +13,7 @@ namespace finalJEMA
         public string  apeAsistente { get; set; }
         public string  telAsistente { get; set; }
 
-        public virtual ICollection<Factura> Facturas { get; set; }
+       public virtual ICollection<Factura> Facturas { get; set; }
 
         internal void show()
         {

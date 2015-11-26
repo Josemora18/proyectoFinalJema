@@ -43,6 +43,7 @@ namespace finalJEMA.Ventanas
                     MessageBox.Show("Se borraron los datos exitosamente");
                     limpiar();
                     actualizaGrid();
+                    
                 }
 
             }

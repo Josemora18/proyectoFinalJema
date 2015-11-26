@@ -73,6 +73,10 @@
     <Compile Include="Migrations\201511192013291_quitarForanea.Designer.cs">
       <DependentUpon>201511192013291_quitarForanea.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511262225116_nosequehacer.cs" />
+    <Compile Include="Migrations\201511262225116_nosequehacer.Designer.cs">
+      <DependentUpon>201511262225116_nosequehacer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\eliminarAsis.xaml.cs">
       <DependentUpon>eliminarAsis.xaml</DependentUpon>
     </Compile>
@@ -171,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511192013291_quitarForanea.resx">
       <DependentUpon>201511192013291_quitarForanea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511262225116_nosequehacer.resx">
+      <DependentUpon>201511262225116_nosequehacer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

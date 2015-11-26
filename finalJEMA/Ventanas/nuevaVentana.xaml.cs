@@ -42,10 +42,10 @@ namespace finalJEMA
                 //emp.Sueldo = int.Parse(txSueldo.Text);
                 //emp.DepartamentoId = (int)CbDepartamentos.SelectedValue;
 
-                db.Proveedores .Add(prov );
+                db.Proveedores .Add(prov);
                 db.SaveChanges();
-                actualizaCombo();
                 MessageBox.Show("Se guardaron los datos exitosamente");
+                actualizaCombo();
                 limpiar();
             }
             else { MessageBox.Show("Solo inserte letras donde corresponde"); }

@@ -48,11 +48,19 @@ namespace finalJEMA.Ventanas
 
                 db.Asistentes .Add(asis );
                 db.SaveChanges();
-                actualizaCombo();
+                
                 MessageBox.Show("Se guardaron los datos exitosamente");
+                actualizaCombo();
+                limpiar();
             }
             else { MessageBox.Show("Solo inserte letras donde corresponde"); }
            
+        }
+        private void limpiar()
+        {
+            txAsistente.Text = string.Empty;
+            txapellido.Text = string.Empty;
+            txtel.Text = string.Empty;
         }
         public void actualizaCombo()
         {

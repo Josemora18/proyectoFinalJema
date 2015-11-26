@@ -7,13 +7,13 @@ namespace finalJEMA.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class tablas : IMigrationMetadata
+    public sealed partial class nueva : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(tablas));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(nueva));
         
         string IMigrationMetadata.Id
         {
-            get { return "201511181959171_tablas"; }
+            get { return "201511262334266_nueva"; }
         }
         
         string IMigrationMetadata.Source

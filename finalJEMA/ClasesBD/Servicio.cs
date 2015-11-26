@@ -10,7 +10,7 @@ namespace finalJEMA
    public  class Servicio
     {
        [Key] public int IdServicio {get; set;}
-      // public virtual int ProveedorIdProveedor { get; set; }
+       public virtual int ProveedorIdProveedor { get; set; }
         public string nomServicio {get; set;}
         public float precio {get; set;}
 

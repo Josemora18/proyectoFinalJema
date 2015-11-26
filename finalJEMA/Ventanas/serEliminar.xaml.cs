@@ -43,7 +43,12 @@ namespace finalJEMA.Ventanas
                     MessageBox.Show("Se borraron los datos exitosamente");
                     limpiar();
                     actualizaGrid();
-                   
+
+            //para actualizar el combo de la ventana anterior
+                    vtaServicio asd = new vtaServicio();
+                    asd.cbbID.ItemsSource = db.Proveedores.ToList();
+                    asd.cbbID.DisplayMemberPath = "IdServicio";
+                    asd.cbbID.SelectedValuePath = "IdServicio";
                 }
 
             }

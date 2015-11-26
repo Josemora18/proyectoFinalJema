@@ -63,19 +63,11 @@
     <Compile Include="ClasesBD\Asistente.cs" />
     <Compile Include="ClasesBD\cuentaProveedor.cs" />
     <Compile Include="ClasesBD\Factura.cs" />
-    <Compile Include="Migrations\201511181959171_tablas.cs" />
-    <Compile Include="Migrations\201511181959171_tablas.Designer.cs">
-      <DependentUpon>201511181959171_tablas.cs</DependentUpon>
-    </Compile>
     <Compile Include="ClasesBD\Proveedor.cs" />
     <Compile Include="ClasesBD\Servicio.cs" />
-    <Compile Include="Migrations\201511192013291_quitarForanea.cs" />
-    <Compile Include="Migrations\201511192013291_quitarForanea.Designer.cs">
-      <DependentUpon>201511192013291_quitarForanea.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201511262225116_nosequehacer.cs" />
-    <Compile Include="Migrations\201511262225116_nosequehacer.Designer.cs">
-      <DependentUpon>201511262225116_nosequehacer.cs</DependentUpon>
+    <Compile Include="Migrations\201511262334266_nueva.cs" />
+    <Compile Include="Migrations\201511262334266_nueva.Designer.cs">
+      <DependentUpon>201511262334266_nueva.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\eliminarAsis.xaml.cs">
       <DependentUpon>eliminarAsis.xaml</DependentUpon>
@@ -170,14 +162,8 @@
     <EmbeddedResource Include="Migrations\201511131648399_EjemploProyecto.resx">
       <DependentUpon>201511131648399_EjemploProyecto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511181959171_tablas.resx">
-      <DependentUpon>201511181959171_tablas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511192013291_quitarForanea.resx">
-      <DependentUpon>201511192013291_quitarForanea.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511262225116_nosequehacer.resx">
-      <DependentUpon>201511262225116_nosequehacer.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201511262334266_nueva.resx">
+      <DependentUpon>201511262334266_nueva.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

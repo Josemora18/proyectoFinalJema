@@ -43,10 +43,9 @@ namespace finalJEMA.Ventanas
                 Servicio   ser = new Servicio  ();
                 ser.nomServicio = txServicio.Text;
                 ser.precio = float.Parse(txPrecio.Text);
-               // ser.ProveedorIdProveedor = int.Parse(comboprove.SelectedValue.ToString());
+               ser.ProveedorIdProveedor = int.Parse(cbbIDPro.SelectedValue.ToString());
                 //emp.Sueldo = int.Parse(txSueldo.Text);
                 //emp.DepartamentoId = (int)CbDepartamentos.SelectedValue;
-
                 db.Servicios .Add(ser);
                 db.SaveChanges();
                 actualizaCombo();

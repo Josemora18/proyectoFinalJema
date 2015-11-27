@@ -16,6 +16,8 @@ namespace finalJEMA
 
         public virtual ICollection<Factura> Facturas { get; set; }
 
+        public virtual List<Factura> FacturaList { get; set; }
+
         internal void show()
         {
             throw new NotImplementedException();

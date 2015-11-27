@@ -19,5 +19,13 @@ namespace finalJEMA.ClasesBD
        
 
         public object ItemsSource { get; set; }
+
+
+
+        public Proveedor Proveedor { get; set; }
+
+        //public finalJEMA.Proveedor Servicio { get; set; }
+
+        //public Servicio Servicio { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using finalJEMA.Ventanas;
+﻿using finalJEMA.ClasesBD;
+using finalJEMA.Ventanas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace finalJEMA
     /// </summary>
     public partial class MainWindow : Window
     {
+        //private Proveedor  tempProveedor = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -34,13 +36,22 @@ namespace finalJEMA
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            vtaServicio vta = new vtaServicio();
-            vta.Show();
+            JEMA db = new JEMA();
+            if (db.Proveedores.Count() > 0)
+            {
+                vtaServicio vta = new vtaServicio();
+                vta.Show();
+            }
+            else
+            {
+                MessageBox.Show("No hay proveedores dados de alta");
+            }
+           
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            vtaCuentaProveedor vta = new vtaCuentaProveedor();
+            vtaFactura vta = new vtaFactura();
             vta.Show();
         }
 

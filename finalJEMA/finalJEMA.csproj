@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201511262334266_nueva.Designer.cs">
       <DependentUpon>201511262334266_nueva.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201511271811422_listaFactura.cs" />
+    <Compile Include="Migrations\201511271811422_listaFactura.Designer.cs">
+      <DependentUpon>201511271811422_listaFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventanas\eliminarAsis.xaml.cs">
       <DependentUpon>eliminarAsis.xaml</DependentUpon>
     </Compile>
@@ -86,6 +90,9 @@
     </Compile>
     <Compile Include="Ventanas\vtaCuentaProveedor.xaml.cs">
       <DependentUpon>vtaCuentaProveedor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Ventanas\vtaFactura.xaml.cs">
+      <DependentUpon>vtaFactura.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\vtaServicio.xaml.cs">
       <DependentUpon>vtaServicio.xaml</DependentUpon>
@@ -132,6 +139,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Ventanas\vtaFactura.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Ventanas\vtaServicio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -164,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201511262334266_nueva.resx">
       <DependentUpon>201511262334266_nueva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201511271811422_listaFactura.resx">
+      <DependentUpon>201511271811422_listaFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -67,6 +67,8 @@ namespace finalJEMA.Ventanas
         {
             txServicio.Text = string.Empty;
             txPrecio.Text = string.Empty;
+            cbbIDPro.Text = string.Empty;
+            cbbID.Text = string.Empty;
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

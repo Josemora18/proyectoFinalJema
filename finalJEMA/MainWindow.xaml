@@ -5,7 +5,7 @@
     <Grid>
         <Button Content="Proveedores" HorizontalAlignment="Left" Margin="399,215,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1" Height="43"/>
         <Button Content="Servicio" HorizontalAlignment="Left" Margin="289,215,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2" Height="43"/>
-        <Button Content="Cuenta de Proveedor" HorizontalAlignment="Left" Margin="126,215,0,0" VerticalAlignment="Top" Width="121" Click="Button_Click_3" Height="43"/>
+        <Button Content="Facturar" HorizontalAlignment="Left" Margin="140,215,0,0" VerticalAlignment="Top" Width="121" Click="Button_Click_3" Height="43"/>
         <Button Content="Asistente" HorizontalAlignment="Left" Margin="30,215,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click_4" Height="43"/>
         <Label HorizontalAlignment="Left" Margin="126,42,0,0" VerticalAlignment="Top" Height="140" Width="275">
             <Image Height="130" Source="12278128_967494253308508_1160627159_n.jpg" Stretch="Fill" Width="265"/>

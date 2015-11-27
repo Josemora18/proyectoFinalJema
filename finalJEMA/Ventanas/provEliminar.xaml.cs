@@ -43,7 +43,13 @@ namespace finalJEMA.Ventanas
                     MessageBox.Show("Se borraron los datos exitosamente");
                     limpiar();
                     actualizaGrid();
-                    
+
+                    ////para que actualice el combe de la ventana anterior
+                    //nuevaVentana asd = new nuevaVentana();
+                    //asd.cbbID.ItemsSource = db.Proveedores.ToList();
+                    //asd.cbbID.DisplayMemberPath = "IdProveedor";
+                    //asd.cbbID.SelectedValuePath = "IdProveedor";
+                   
                 }
 
             }
@@ -105,6 +111,7 @@ namespace finalJEMA.Ventanas
             //vta.Show();
             this.Close();
             limpiar();
+
         }
 
         private void actualizaGrid()

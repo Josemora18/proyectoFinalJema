@@ -58,12 +58,15 @@ namespace finalJEMA.Ventanas
                                 s.IdServicio,
                                 s.nomServicio,
                                 s.precio,
-                                s.ProveedorIdProveedor,
-                                
+                                s.ProveedorIdProveedor,                          
+                                //Total = s.precio ,                              
                                 //Subtotal = s.precio * s.cantidad
                             };
             ar.ItemsSource = null;
             ar.ItemsSource = registros;
+
+
+            sdg.Content = string.Format("Total: {0} ", AgregarAlGrid.Sum(x => x.precio).ToString("C"));
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
@@ -75,18 +78,18 @@ namespace finalJEMA.Ventanas
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //if (xv.SelectedIndex  > -1)
+            //if (tempServicio == null )
             //{
             //    MessageBox.Show("No se ha seleccionado servicio", "No hay servicio", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             //    return;
             //}
             //else
             //{
-
             JEMA db = new JEMA();
             //int idProv = int.Parse(xv.Text);
             int id = int.Parse(xv.Text);
-            Servicio p = db.Servicios.SingleOrDefault  (x => x.IdServicio  == id);
+            Servicio p = db.Servicios.SingleOrDefault(x => x.IdServicio == id);
+
             //db.Proveedor  = db.Proveedores  .SingleOrDefault(x => x.IdProveedor == (int)xv.SelectedValue);
             //db.Servicio  = db.Servicios .SingleOrDefault(s => s.ProveedorIdProveedor  == (int)vd.SelectedValue);
             
@@ -94,7 +97,8 @@ namespace finalJEMA.Ventanas
             {
                 tempServicio = p;
 
-            }
+                     }
+           
         
             AgregarAlGrid.Add (new Servicio()
                 {

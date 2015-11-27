@@ -35,20 +35,20 @@ namespace finalJEMA.Ventanas
             vd.ItemsSource = db.Proveedores.ToList();
             vd.DisplayMemberPath = "NombreProveedor";
             vd.SelectedValuePath = "IdProveedor";
-            
+            //vd.SelectedIndex = 0;
             xv.ItemsSource = db.Servicios.ToList();
             xv.DisplayMemberPath = "IdServicio";
             xv.SelectedValuePath = "IdServicio";
-        
+            //xv.SelectedIndex = 0;
 
 
         }
 
-        private void LimpiarCbb() 
-        {
-            vd.Text = string.Empty;
-            xv.Text = string.Empty;
-        }
+        //private void LimpiarCbb() 
+        //{
+        //    vd.Text = string.Empty;
+        //    xv.Text = string.Empty;
+        //}
         private void actualizaGrid()
         {
             //JEMA db = new JEMA ();
@@ -59,7 +59,7 @@ namespace finalJEMA.Ventanas
                                 s.nomServicio,
                                 s.precio,
                                 s.ProveedorIdProveedor,                          
-                                //Total = s.precio ,                              
+                                //sdg = s.precio ,                              
                                 //Subtotal = s.precio * s.cantidad
                             };
             ar.ItemsSource = null;
@@ -78,41 +78,55 @@ namespace finalJEMA.Ventanas
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            //if (tempServicio == null )
-            //{
-            //    MessageBox.Show("No se ha seleccionado servicio", "No hay servicio", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-            //    return;
-            //}
-            //else
-            //{
-            JEMA db = new JEMA();
-            //int idProv = int.Parse(xv.Text);
-            int id = int.Parse(xv.Text);
-            Servicio p = db.Servicios.SingleOrDefault(x => x.IdServicio == id);
-
-            //db.Proveedor  = db.Proveedores  .SingleOrDefault(x => x.IdProveedor == (int)xv.SelectedValue);
-            //db.Servicio  = db.Servicios .SingleOrDefault(s => s.ProveedorIdProveedor  == (int)vd.SelectedValue);
-            
-            if (p != null )
+            if (vd.SelectedIndex > -1 && xv.SelectedIndex > -1)
             {
-                tempServicio = p;
 
-                     }
-           
-        
-            AgregarAlGrid.Add (new Servicio()
+
+                //if (tempServicio == null )
+                //{
+                //    MessageBox.Show("No se ha seleccionado servicio", "No hay servicio", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                //    return;
+                //}
+                //else
+                //{
+                JEMA db = new JEMA();
+                //int idProv = int.Parse(xv.Text);
+                int id = int.Parse(xv.Text);
+                Servicio p = db.Servicios.SingleOrDefault(x => x.IdServicio == id);
+
+                //db.Proveedor  = db.Proveedores  .SingleOrDefault(x => x.IdProveedor == (int)xv.SelectedValue);
+                //db.Servicio  = db.Servicios .SingleOrDefault(s => s.ProveedorIdProveedor  == (int)vd.SelectedValue);
+
+                if (p != null)
                 {
-                    IdServicio = tempServicio.IdServicio,
-                    nomServicio = tempServicio.nomServicio,
-                    precio = tempServicio.precio,
-                    ProveedorIdProveedor = tempServicio.ProveedorIdProveedor,
-                });
+                    tempServicio = p;
+
+                }
+
+
+                AgregarAlGrid.Add(new Servicio()
+                    {
+                        IdServicio = tempServicio.IdServicio,
+                        nomServicio = tempServicio.nomServicio,
+                        precio = tempServicio.precio,
+                        ProveedorIdProveedor = tempServicio.ProveedorIdProveedor,
+                    });
 
                 actualizaGrid();
                 tempServicio = null;
-                vd.Text = string.Empty;
-                xv.Text = string.Empty;
+                //vd.Text = string.Empty;
+                //xv.Text = string.Empty;
             }
+            else
+            {
+                MessageBox.Show("Tiene que seleccionar al menos uan opcion en cada campo","precaucion" , MessageBoxButton.OK, MessageBoxImage.Hand);
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("El monto " + sdg.Content + "\nEl ID del proveedor que le atendio fue: " + vd.SelectedValue ,"Gracias por su compra", MessageBoxButton.OK, MessageBoxImage.Asterisk );
+        }
         }
 
     }

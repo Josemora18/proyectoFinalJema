@@ -8,6 +8,7 @@ namespace finalJEMA
 {
     public class Proveedor
     {
+
        [Key]  public int IdProveedor { get; set; } 
          public string NombreProveedor { get; set; } 
          public string Direccion {get; set; }
@@ -15,11 +16,6 @@ namespace finalJEMA
 
          public virtual ICollection<Factura> Facturas { get; set; }
          public virtual ICollection<Servicio> Servicios { get; set; }
-         
 
-         internal void Show()
-         {
-             throw new NotImplementedException();
-         }
     }
 }

@@ -43,7 +43,7 @@ namespace finalJEMA.Ventanas
                 Servicio   ser = new Servicio  ();
                 ser.nomServicio = txServicio.Text;
                 ser.precio = float.Parse(txPrecio.Text);
-               ser.ProveedorIdProveedor = int.Parse(cbbIDPro.SelectedValue.ToString());
+               //ser.ProveedorIdProveedor = int.Parse(cbbIDPro.SelectedValue.ToString());
                 //emp.Sueldo = int.Parse(txSueldo.Text);
                 //emp.DepartamentoId = (int)CbDepartamentos.SelectedValue;
                 db.Servicios .Add(ser);
@@ -52,7 +52,7 @@ namespace finalJEMA.Ventanas
                 MessageBox.Show("Se guardaron los datos exitosamente");
                 limpiar();
             }
-            else { MessageBox.Show("Solo inserte letras donde corresponde"); }
+            else { MessageBox.Show("Solo letras y numeros donde corresponde", "precaucion", MessageBoxButton.OK, MessageBoxImage.Hand); }
             
         }
         public void actualizaCombo()
@@ -97,7 +97,7 @@ namespace finalJEMA.Ventanas
                     limpiar();
                 }
             }
-            else { MessageBox.Show("Solo Letras y numeros donde corresponde"); }
+            else { MessageBox.Show("Solo letras y numeros donde corresponde", "precaucion", MessageBoxButton.OK, MessageBoxImage.Hand); }
            
         }
 

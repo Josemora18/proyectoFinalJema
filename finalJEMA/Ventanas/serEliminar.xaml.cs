@@ -47,7 +47,7 @@ namespace finalJEMA.Ventanas
                 }
 
             }
-            else { MessageBox.Show("Solo Numeros donde corresponde"); }
+            else { MessageBox.Show("Solo letras y numeros donde corresponde", "precaucion", MessageBoxButton.OK, MessageBoxImage.Hand); }
         }
 
         private void limpiar()

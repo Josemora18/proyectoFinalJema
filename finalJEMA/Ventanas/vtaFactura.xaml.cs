@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text .RegularExpressions ;
 
 namespace finalJEMA.Ventanas
 {
@@ -40,39 +41,24 @@ namespace finalJEMA.Ventanas
             xv.DisplayMemberPath = "IdServicio";
             xv.SelectedValuePath = "IdServicio";
             //xv.SelectedIndex = 0;
-
-
         }
 
-        //private void LimpiarCbb() 
-        //{
-        //    vd.Text = string.Empty;
-        //    xv.Text = string.Empty;
-        //}
         private void actualizaGrid()
-        {
-            //JEMA db = new JEMA ();
-            var registros = from s in AgregarAlGrid 
+        {           
+            var registros = from s in AgregarAlGrid
                             select new
                             {
                                 s.IdServicio,
                                 s.nomServicio,
                                 s.precio,
-                                s.ProveedorIdProveedor,                          
-                                //sdg = s.precio ,                              
-                                //Subtotal = s.precio * s.cantidad
+                                //s.ProveedorIdProveedor,                              
                             };
             ar.ItemsSource = null;
             ar.ItemsSource = registros;
-
-
             sdg.Content = string.Format("Total: {0} ", AgregarAlGrid.Sum(x => x.precio).ToString("C"));
         }
-
         private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            //MainWindow vta = new MainWindow();
-            //vta.Show();
+        {           
             this.Close();
         }
 
@@ -80,36 +66,22 @@ namespace finalJEMA.Ventanas
         {
             if (vd.SelectedIndex > -1 && xv.SelectedIndex > -1)
             {
-
-
-                //if (tempServicio == null )
-                //{
-                //    MessageBox.Show("No se ha seleccionado servicio", "No hay servicio", MessageBoxButton.OK, MessageBoxImage.Exclamation);
-                //    return;
-                //}
-                //else
-                //{
+                
                 JEMA db = new JEMA();
-                //int idProv = int.Parse(xv.Text);
                 int id = int.Parse(xv.Text);
-                Servicio p = db.Servicios.SingleOrDefault(x => x.IdServicio == id);
-
-                //db.Proveedor  = db.Proveedores  .SingleOrDefault(x => x.IdProveedor == (int)xv.SelectedValue);
-                //db.Servicio  = db.Servicios .SingleOrDefault(s => s.ProveedorIdProveedor  == (int)vd.SelectedValue);
+                Servicio p = db.Servicios.SingleOrDefault(x => x.IdServicio == id);             
 
                 if (p != null)
                 {
                     tempServicio = p;
 
                 }
-
-
                 AgregarAlGrid.Add(new Servicio()
                     {
                         IdServicio = tempServicio.IdServicio,
                         nomServicio = tempServicio.nomServicio,
                         precio = tempServicio.precio,
-                        ProveedorIdProveedor = tempServicio.ProveedorIdProveedor,
+                        //ProveedorIdProveedor = tempServicio.ProveedorIdProveedor,
                     });
 
                 actualizaGrid();
@@ -119,15 +91,28 @@ namespace finalJEMA.Ventanas
             }
             else
             {
-                MessageBox.Show("Tiene que seleccionar al menos uan opcion en cada campo","precaucion" , MessageBoxButton.OK, MessageBoxImage.Hand);
+                MessageBox.Show("Tiene que seleccionar al menos uan opcion en cada campo", "precaucion", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("El monto " + sdg.Content + "\nEl ID del proveedor que le atendio fue: " + vd.SelectedValue ,"Gracias por su compra", MessageBoxButton.OK, MessageBoxImage.Asterisk );
-        }
-        }
 
+            JEMA db = new JEMA ();
+            Factura fac = new Factura ();
+            fac.fecha = DateTime.Now;
+            fac.ServicioIdServicio = (int)xv.SelectedValue;
+            fac.ProveedorIdProveedor = (int)vd.SelectedValue;
+           //fac.AsistenteIdAsistente  = (int) :
+            db.Facturas .Add (fac);
+            db.SaveChanges();
+            MessageBox.Show("El monto " + sdg.Content + "\nEl ID del proveedor que le atendio fue: " + vd.SelectedValue, "Gracias por su compra", MessageBoxButton.OK, MessageBoxImage.Asterisk);
+        }
     }
+}
+        
+                
+
+    
+
 

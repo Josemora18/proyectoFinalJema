@@ -48,7 +48,7 @@ namespace finalJEMA
                 actualizaCombo();
                 limpiar();
             }
-            else { MessageBox.Show("Solo inserte letras donde corresponde"); }
+            else { MessageBox.Show("Solo letras y numeros donde corresponde", "precaucion", MessageBoxButton.OK, MessageBoxImage.Hand); }
         }
         private void limpiar()
         {
@@ -106,7 +106,7 @@ namespace finalJEMA
                     limpiar();
                 }
             }
-            else { MessageBox.Show("Solo Letras y numeros donde corresponde"); }
+            else {MessageBox.Show("Solo letras y numeros donde corresponde", "precaucion", MessageBoxButton.OK, MessageBoxImage.Hand); }
            
         }
 

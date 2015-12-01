@@ -65,13 +65,13 @@
     <Compile Include="ClasesBD\Factura.cs" />
     <Compile Include="ClasesBD\Proveedor.cs" />
     <Compile Include="ClasesBD\Servicio.cs" />
-    <Compile Include="Migrations\201511262334266_nueva.cs" />
-    <Compile Include="Migrations\201511262334266_nueva.Designer.cs">
-      <DependentUpon>201511262334266_nueva.cs</DependentUpon>
+    <Compile Include="Migrations\201512012318525_nosequehacerya.cs" />
+    <Compile Include="Migrations\201512012318525_nosequehacerya.Designer.cs">
+      <DependentUpon>201512012318525_nosequehacerya.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201511271811422_listaFactura.cs" />
-    <Compile Include="Migrations\201511271811422_listaFactura.Designer.cs">
-      <DependentUpon>201511271811422_listaFactura.cs</DependentUpon>
+    <Compile Include="Migrations\201512012327260_sabechangues.cs" />
+    <Compile Include="Migrations\201512012327260_sabechangues.Designer.cs">
+      <DependentUpon>201512012327260_sabechangues.cs</DependentUpon>
     </Compile>
     <Compile Include="Ventanas\eliminarAsis.xaml.cs">
       <DependentUpon>eliminarAsis.xaml</DependentUpon>
@@ -105,7 +105,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ClasesBD\EjemploProyecto.cs" />
     <Compile Include="ClasesBD\JEMA.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -173,11 +172,11 @@
     <EmbeddedResource Include="Migrations\201511131648399_EjemploProyecto.resx">
       <DependentUpon>201511131648399_EjemploProyecto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511262334266_nueva.resx">
-      <DependentUpon>201511262334266_nueva.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512012318525_nosequehacerya.resx">
+      <DependentUpon>201512012318525_nosequehacerya.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201511271811422_listaFactura.resx">
-      <DependentUpon>201511271811422_listaFactura.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201512012327260_sabechangues.resx">
+      <DependentUpon>201512012327260_sabechangues.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

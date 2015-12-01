@@ -44,7 +44,7 @@ namespace finalJEMA
             }
             else
             {
-                MessageBox.Show("No hay proveedores dados de alta");
+                MessageBox.Show("No puede ingresar porque no hay Proveedores dados de alta en la BD", "precaucion", MessageBoxButton.OK, MessageBoxImage.Hand);
             }
            
         }

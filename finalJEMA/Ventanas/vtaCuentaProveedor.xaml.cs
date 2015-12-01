@@ -52,7 +52,7 @@ namespace finalJEMA.Ventanas
                 MessageBox.Show("Se guardaron los datos exitosamente");
                 limpiar();
             }
-            else { MessageBox.Show("Solo inserte letras donde corresponde y sin espacios"); }
+            else { MessageBox.Show("Solo letras y numeros donde corresponde", "precaucion", MessageBoxButton.OK, MessageBoxImage.Hand); }
            
         }
         private void limpiar()
@@ -95,7 +95,7 @@ namespace finalJEMA.Ventanas
                     limpiar();
                 }
             }
-            else { MessageBox.Show("Solo Letras y numeros donde corresponde"); }
+            else { MessageBox.Show("Solo letras y numeros donde corresponde", "precaucion", MessageBoxButton.OK, MessageBoxImage.Hand); }
            
         }
 
